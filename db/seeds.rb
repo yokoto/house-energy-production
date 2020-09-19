@@ -20,10 +20,12 @@ CSV.foreach('db/dataset_50.csv', headers: true) do |row|
 end
 
 CSV.foreach('db/house_data.csv', headers: true) do |row|
+  city = City.find_or_create_by!(name: row['City'])
+
   House.create!(
     firstname: row['Firstname'],
     lastname: row['Lastname'],
-    city: row['City'],
+    city_id: city.id,
     num_of_people: row['num_of_people'],
     has_child: row['has_child'] == 'Yes'
   )

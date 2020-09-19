@@ -5,7 +5,7 @@
 #  id            :bigint           not null, primary key
 #  firstname     :string(255)
 #  lastname      :string(255)
-#  city          :string(255)
+#  city_id       :integer
 #  num_of_people :integer
 #  has_child     :boolean
 #  created_at    :datetime         not null

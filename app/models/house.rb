@@ -5,7 +5,7 @@
 #  id            :bigint           not null, primary key
 #  firstname     :string(255)
 #  lastname      :string(255)
-#  city          :string(255)
+#  city_id       :integer
 #  num_of_people :integer
 #  has_child     :boolean
 #  created_at    :datetime         not null
@@ -13,4 +13,5 @@
 #
 class House < ApplicationRecord
   has_many :energies, class_name: 'Energy', dependent: :destroy
+  has_one :city, class_name: 'City', foreign_key: :city_id, inverse_of: :house, dependent: :nullify
 end
