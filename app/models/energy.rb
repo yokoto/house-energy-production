@@ -14,4 +14,6 @@
 #  updated_at        :datetime         not null
 #
 class Energy < ApplicationRecord
+  belongs_to :house, class_name: 'House'
+  has_one :city, through: :house
 end

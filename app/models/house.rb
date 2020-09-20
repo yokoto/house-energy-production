@@ -12,6 +12,6 @@
 #  updated_at    :datetime         not null
 #
 class House < ApplicationRecord
-  has_many :energies, class_name: 'Energy', dependent: :destroy
   belongs_to :city, class_name: 'City'
+  has_many :energies, class_name: 'Energy', dependent: :destroy
 end

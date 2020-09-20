@@ -9,4 +9,5 @@
 #
 class City < ApplicationRecord
   has_many :houses, class_name: 'House', dependent: :destroy
+  has_many :energies, through: :houses
 end
