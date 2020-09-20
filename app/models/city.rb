@@ -8,4 +8,5 @@
 #  updated_at :datetime         not null
 #
 class City < ApplicationRecord
+  has_many :houses, class_name: 'House', dependent: :destroy
 end

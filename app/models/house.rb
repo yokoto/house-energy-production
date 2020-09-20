@@ -13,5 +13,5 @@
 #
 class House < ApplicationRecord
   has_many :energies, class_name: 'Energy', dependent: :destroy
-  has_one :city, class_name: 'City', foreign_key: :city_id, inverse_of: :house, dependent: :nullify
+  belongs_to :city, class_name: 'City'
 end
