@@ -1,8 +1,10 @@
-
+%h1 家庭ごとのエネルギー生産量
+= bar_chart @houses.group(:id).select('energies.energy_production').sum('energies.energy_production')
 
 %table
   %thead
     %tr
+      %th id
       %th firstname
       %th lastname
       %th city
@@ -11,6 +13,8 @@
       %th energy_production
   - @houses.each do |house|
     %tr
+      %td
+        = house.id
       %td
         = house.firstname
       %td
