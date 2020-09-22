@@ -5,8 +5,9 @@
   %thead
     %tr
       %th name
-      - @dates.each do |year, month|
-        %th #{year}-#{month}
+      - @dates.each do |date|
+        %th
+          = date
   - @cities_data.each do |city_data|
     %tr
       %td

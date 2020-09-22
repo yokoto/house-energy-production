@@ -16,4 +16,8 @@
 class Energy < ApplicationRecord
   belongs_to :house, class_name: 'House'
   has_one :city, through: :house
+
+  def self.dates
+    distinct.pluck(:year, :month).map { |year, month| "#{year}-#{month}" }
+  end
 end
