@@ -17,6 +17,11 @@ test:
   <<: *default
   database: enechange_test
 
+# production:
+#   <<: *default
+#   database: enechange_production
 production:
   <<: *default
-  database: enechange_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
